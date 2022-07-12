@@ -14,12 +14,10 @@ Streamline setting up tournaments for your friends and collecting money
   - create_tournament.js
 
 ## Architecture
-Frontend running on Vercel and Backend runing on Heroku
-- Frontend in JavaScript
-  - Next.js
-  - Apollo Client
-- Backend in TypeScript
-  - Apollo Server
+Isolated Monorepo
+- Next.js frontend in JavaScript => deploy to Vercel?
+  - Apollo Client to send GraphQL requests
+- Apollo Server backend in TypeScript => deploy to Heroku?
 
 ### Next.js Frontend
 - `npx create-next-app client`
@@ -57,3 +55,9 @@ Frontend running on Vercel and Backend runing on Heroku
 - Server
   - `npm init -y`
   - `touch .gitignore` [https://github.com/github/gitignore/blob/main/Node.gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)
+
+
+## Glossary
+Isolated Monorepo - A repository that contains components that are completely isolated to the directory they are contained in (eg. JS frontend and Python backend)
+
+Shared Monorepo - A repository that contains components that share code or configuration from the root directory (eg. Yarn workspace or Lerna project)
