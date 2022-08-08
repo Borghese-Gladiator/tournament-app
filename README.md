@@ -1,47 +1,34 @@
-# Tournament App
-Streamline setting up tournaments for your friends and collecting money
+# TourneyEz
+Streamline scheduling tournaments with your friends
 
 ## Table of Contents
+- [Demo](#demo)
+- [Usage](#usage)
+- [Architecture](#architecture)
+	- [Coding Standards](#coding-standards)
+	- [Bootstrapping Notes](#bootstrapping-notes)
+- [Glossary](#glossary)
+- [To Do](#to-do)
 
+## Demo
+Demo Link: [link]()
 
-## Features
-
-### Pages
-- authenticate.js - shows register and login components
-- join.js - shows join tournament page when user clicks on tournament invite link
-- protected pages
-  - dashboard.js - shows profile, tournament participation, and created tournaments
-  - create_tournament.js
+## Usage
+- Tournament Admins
+  - Create/View/Update/Delete tournaments
+  - Save magic link (send in group chat or post on website)
+- Tournament User
+	- Sign up using magic join link
+- Anyone
+	- View tournament schedule
 
 ## Architecture
-Isolated Monorepo
-- Next.js frontend in JavaScript => deploy to Vercel?
-  - Apollo Client to send GraphQL requests
-- Apollo Server backend in TypeScript => deploy to Heroku?
-
-### Next.js Frontend
-- `npx create-next-app client`
-- `npm install @mui/material @emotion/react @emotion/styled` - Material UI 5
-- `npm i @mui/icons-material`
-- Layout.js
-  - Navbar.js - responsive and   
-    - AuthModa.js
-
-- wrote up public pages - authenticate.js, join.js
-- wrote up protected pages - \[id\].js, \[id\]/create_tournament.js
-
-#### Client Bug Fixes
-- https://stackoverflow.com/questions/56622246/react-material-ui-modal-typeerror-cannot-read-property-hasownproperty-of-unde => DONE, modal needs content inside a div
-
-### Apollo Server Backend
-- `npm init -y`
-- `npm i apollo-server graphql`
-- `touch index.js` and add basic code from first-apollo-server app
+- Next.js frontend with SSR
+- GraphQL Apollo Server
+  - JWT Authentication for tournament administrators
 
 ### Coding Standards
-- Linting
-  - frontend - ESLint
-  - backend - ESLint with tsconfig.json
+- Linting - ESLint
 - Testing
   - frontend
     - Jest unit tests written per function
@@ -52,12 +39,29 @@ Isolated Monorepo
 ### Bootstrapping Notes
 - Client
   - `npx create-next-app client`
+  - `npm install @mui/material @emotion/react @emotion/styled` - Material UI 5
+  - `npm i @mui/icons-material`
 - Server
+  - `mkdir server`
   - `npm init -y`
   - `touch .gitignore` [https://github.com/github/gitignore/blob/main/Node.gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)
-
+  - `npm i apollo-server graphql`
+	- `touch index.js` and add basic code from first-apollo-server app
 
 ## Glossary
-Isolated Monorepo - A repository that contains components that are completely isolated to the directory they are contained in (eg. JS frontend and Python backend)
+- Isolated Monorepo - A repository that contains components that are completely isolated to the directory they are contained in (eg. JS frontend and Python backend)
+- Shared Monorepo - A repository that contains components that share code or configuration from the root directory (eg. Yarn workspace or Lerna project)
 
-Shared Monorepo - A repository that contains components that share code or configuration from the root directory (eg. Yarn workspace or Lerna project)
+## To Do
+- Fix "utils" to be "@/utils" with jsconfig.json changes
+- Fix layout
+	- create `<main>` element in Layout.js with flexGrow: 1 to fill page
+	- have child fill height 100%
+	- check each features page
+- Add theme.js - DARK MODE
+- Add form library. /join should use a form library for validation
+- Save form info in localStorage so users don't lose it if they change tabs
+- Add favicon
+- Save data into database (consider how to use it with Railway.app for deploying)
+- Fix deployment to [railway.app](http://railway.app/)  	
+- look into multi tenancy
