@@ -8,18 +8,11 @@ const RootBox = styled(Box)`
 	display: flex;
 	flex-flow: column;
 `
-const SMain = styled("main")`
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-`
 export default function Layout({ children }) {
   return (
     <RootBox>
       <Navbar />
-      <SMain>{children}</SMain>
+      {children}
 			<Footer />
     </RootBox>
   )

@@ -2,8 +2,8 @@
 import { useState } from 'react';
 
 import { getLayout } from '@/components/Layout';
-import { Box, Container, InputLabel, OutlinedInput, InputAdornment, FormControl, Select, MenuItem } from '@mui/material';
 import Logo from '@/components/Logo';
+import { Box, InputAdornment, MenuItem, OutlinedInput, Select } from '@mui/material';
 
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -15,7 +15,7 @@ function Home() {
 		setSearch(e.target.value);
 	}
 	return (
-		<>
+		<Box p={1} sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 			<Logo />
 			<Box mt={1} sx={{ display: 'flex' }}>
 				<Select
@@ -39,7 +39,7 @@ function Home() {
 					sx={{ minWidth: '420px' }}
 				/>
 			</Box>
-		</>
+		</Box>
 	)
 }
 
