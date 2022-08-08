@@ -14,10 +14,6 @@ import { styled } from '@mui/material/styles';
 import Logo from '@/components/Logo';
 
 const AppBarStyled = styled(AppBar)`
-	z-index: 1100;
-	top: 0px;
-	left: auto;
-	right: 0px;
 	padding: 8px 16px;
 	transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 	box-shadow: none;
