@@ -31,3 +31,5 @@ export default function Layout({ children }) {
     </RootBox>
   )
 }
+
+export const getLayout = page => <Layout>{page}</Layout>

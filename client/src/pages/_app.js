@@ -1,13 +1,11 @@
-import Layout from '../components/Layout';
+// pages/_app.js
+
 import 'tailwindcss/tailwind.css'
 import '/globals.css';
 
-function MyApp({ Component, pageProps }) {
-	return (
-		<Layout>
-			<Component {...pageProps} />
-		</Layout>
-	)
-}
+export default function MyApp({ Component, pageProps }) {
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page) => page)
 
-export default MyApp;
+  return getLayout(<Component {...pageProps} />)
+}

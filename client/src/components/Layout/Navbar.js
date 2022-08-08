@@ -12,7 +12,6 @@ import { styled } from '@mui/material/styles';
 
 // Custom
 import Logo from '@/components/Logo';
-import AuthModal from './AuthModal';
 
 const AppBarStyled = styled(AppBar)`
 	position: fixed;
@@ -34,37 +33,14 @@ const AppBarStyled = styled(AppBar)`
 function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBarStyled position="static">
         <Toolbar>
 					<Logo />
 					<Box sx={{ flexGrow: 1 }} />
-					<AuthModal />
         </Toolbar>
-      </AppBar>
+      </AppBarStyled>
     </Box>
   );
 }
 
 export default Navbar;
-
-/*
-		display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    position: fixed;
-    z-index: 1100;
-    top: 0px;
-    left: auto;
-    right: 0px;
-    padding: 8px 16px;
-    transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    box-shadow: none;
-    backdrop-filter: blur(20px);
-    border-style: solid;
-    border-color: rgba(194, 224, 255, 0.08);
-    border-width: 0px 0px thin;
-    background: rgba(10, 25, 41, 0.7);
-    color: rgb(160, 170, 180);
-*/
