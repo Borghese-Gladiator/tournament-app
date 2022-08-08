@@ -14,7 +14,6 @@ import { styled } from '@mui/material/styles';
 import Logo from '@/components/Logo';
 
 const AppBarStyled = styled(AppBar)`
-	position: fixed;
 	z-index: 1100;
 	top: 0px;
 	left: auto;
