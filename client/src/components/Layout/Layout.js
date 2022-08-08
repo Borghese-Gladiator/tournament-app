@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 const RootBox = styled(Box)`
 	display: flex;
 	flex-flow: column;
-	height: 100%;
+	height: 100vh;
 `
 const SNavbar = styled(Navbar)`
 	flex: 0 1 auto;

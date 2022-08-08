@@ -1,10 +1,9 @@
-
-import Typography from '@mui/material/Typography';
+import { Box, Typography } from '@mui/material';
 import AdbIcon from '@mui/icons-material/Adb';
 
-function Logo() {
+function Logo({ fontSize }) {
 	return (
-		<>
+		<Box>
 			<AdbIcon sx={{ mr: 1 }} />
 			<Typography
 				variant="h6"
@@ -22,7 +21,7 @@ function Logo() {
 			>
 				LOGO
 			</Typography>
-		</>
+		</Box>
 	)
 }
 
