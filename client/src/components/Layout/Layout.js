@@ -1,33 +1,26 @@
 import Navbar from './Navbar';
+import Footer from './Footer';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
 const RootBox = styled(Box)`
+	min-height: 100vh;
 	display: flex;
 	flex-flow: column;
-	height: 100vh;
-`
-const SNavbar = styled(Navbar)`
-	flex: 0 1 auto;
-	/* The above is shorthand for:
-	flex-grow: 0,
-	flex-shrink: 1,
-	flex-basis: auto
-	*/
 `
 const SMain = styled("main")`
-	flex: 1 1 auto;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 `
-const SFooter = styled("footer")`
-	flex: 0 1 40px;
-`
-
 export default function Layout({ children }) {
   return (
     <RootBox>
-      <SNavbar />
+      <Navbar />
       <SMain>{children}</SMain>
-			<SFooter>BLAH</SFooter>
+			<Footer />
     </RootBox>
   )
 }

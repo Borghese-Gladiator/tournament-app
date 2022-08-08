@@ -27,7 +27,7 @@ const AppBarStyled = styled(AppBar)`
 
 function Navbar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <AppBarStyled position="static">
         <Toolbar>
 					<Logo />
