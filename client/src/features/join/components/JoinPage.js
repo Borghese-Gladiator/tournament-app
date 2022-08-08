@@ -4,6 +4,8 @@ import GroupIcon from '@mui/icons-material/Group';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
+import JoinVerticalStepper from './JoinVerticalStepper';
+
 export default function JoinPage() {
 	const title = 'Boston Badminton Tournament 2022';
 	const organizer = "Badminton World Federation";
@@ -20,29 +22,7 @@ export default function JoinPage() {
 				<Typography variant="subtitle1"><LocationOnIcon />{location}</Typography>
 			</Box>
 			<Typography variant="subtitle2"><CalendarMonthIcon />{yyyymmdd(startDate)} - {yyyymmdd(endDate)}</Typography>
-			<Container maxWidth="xs">
-				<Paper sx={{ marginTop: 2, display: 'flex', flexDirection: 'column' }}>
-					<TextField
-						id="outlined-name"
-						label="Email Address"
-					/>
-					<Box m={1} />
-					<TextField
-						id="outlined-name"
-						label="First Name"
-					/>
-					<Box m={1} />
-					<TextField
-						id="outlined-name"
-						label="Last Name"
-					/>
-					<Box m={1} />
-					<TextField
-						id="outlined-name"
-						label="Event"
-					/>
-				</Paper>
-			</Container>
+			<JoinVerticalStepper />
 		</Container>
 	)
 }

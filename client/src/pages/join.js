@@ -5,7 +5,7 @@ import JoinPage from 'features/join/components/JoinPage';
 
 function Join() {
 	return (
-		<Box p={1} sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', background:"yellow"}}>
+		<Box p={1} sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
 			<JoinPage />
 		</Box>
 	)
